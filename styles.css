@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('./images/bg-intro-desktop.png') no-repeat center;
+  background-color: var(--red);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  body {
+    background: url("../images/bg-intro-desktop.png"), #ff7a7a;
+    background-position: center;
+    background-repeat: repeat;
+  }
+}
+
+*, * *, *::after, *::before {
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+  max-width: min(100vw, 600px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  main {
+    max-width: min(90vw, 1000px);
+    flex-direction: row;
+    gap: 1em;
+  }
+  main > * {
+    width: 50%;
+  }
+}
+
+.container {
+  max-width: 80vw;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 20px;
+}
+
+.container-text,
+.container-form {
+  flex: 1;
+}
+
+h1 {
+  color: white;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: white;
+  font-size: 1.05rem;
+  opacity: 90%;
+}
+
+h4 {
+  background-color: var(--blue);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 1rem;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.35);
+  margin-bottom: 1.5rem;
+}
+
+h4 span {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.input-container {
+  position: relative;
+  color: white;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--grayish-blue);
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+input.error {
+  border: 1px solid var(--red);
+}
+
+input:hover,
+input:focus {
+  outline: 1.5px solid var(--blue);
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--green);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grayish-blue);
+  gap: 0.25rem;
+}
+
+small span {
+  color: var (--red);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error {
+  border-color: var(--red);
+}
+
+.error-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevents the icon from blocking input interactions */
+}
+
+.error-icon img {
+  width: 1rem;
+  height: 1rem;
+}
+
+
+.error-message {
+  color: var(--red);
+  font-size: 0.75rem;
+  position: absolute;
+  top: calc(100% + 2px); /* Position the error message below the container with 5px spacing */
+  right: 0; /* Align the right edge of the error message with the right edge of the container */
+}
+
+.input-container input::placeholder {
+  color: transparent; /* Hide the placeholder text */
+}
+
+.terms{
+  color: #ff7a7a;
+}
+
+.pass-icon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  cursor: pointer;
+}
